@@ -7,6 +7,9 @@ class App extends Component {
 		const onSuccess = (payment) => {
 			// Congratulation, it came here means everything's fine!
             		console.log("The payment was succeeded!", payment);
+                    if(payment.paid === true){
+                        console.log("delete local users.");
+                    }
             		// You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
 		}		
 		
@@ -29,7 +32,7 @@ class App extends Component {
 		// Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 		
 		const client = {
-			sandbox:    'APP-80W284485P519543T'
+			sandbox:    'AQnSKKOPywMWpGs9Eq0OzZxba9-nzCrhIcl7ZGp1L-WyYNMFao0QFdF71Fz74ilPsCyXrEkiUnO_wudl'
 			//production: 'YOUR-PRODUCTION-APP-ID',
 		}
 		// In order to get production's app-ID, you will have to send your app to Paypal for approval first
